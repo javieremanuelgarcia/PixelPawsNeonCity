@@ -9,7 +9,6 @@ public class Life : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Player.obj.addLive();
-
             gameObject.SetActive(false);
         }
     }

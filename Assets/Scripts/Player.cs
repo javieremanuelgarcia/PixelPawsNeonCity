@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     public void addLive()
     {
         lives++;
-
+        Debug.Log("Lives: " + lives);
         if (lives > Game.obj.maxLives)
             lives = Game.obj.maxLives;
     }
