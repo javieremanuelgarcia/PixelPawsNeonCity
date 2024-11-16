@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject targetObject; 
+    public GameObject newObject; 
+    public AudioSource switchSound; 
+    private bool isActivated = false; 
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player") && !isActivated)
+        {
+         
+            ChangeObject();
+
+            
+            if (switchSound != null)
+            {
+                switchSound.Play();
+            }
+
+           
+            isActivated = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ChangeObject()
     {
         
+        targetObject.SetActive(false);
+       
+        newObject.SetActive(true);
     }
 }
+
+
