@@ -8,6 +8,7 @@ public class Killer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+           
             Game.obj.gameOver();
         }
     }
